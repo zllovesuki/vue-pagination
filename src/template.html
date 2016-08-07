@@ -1,14 +1,10 @@
 <div class="VuePagination center">
 	<div class="inline-block overflow-hidden border rounded">
 		<span class="left">
-			<li class="VuePagination__pagination-item VuePagination__pagination-item-prev-page border-right" v-bind:class="allowedPage(-1)?'':'disabled'">
-				<a href="javascript:void(0);" @click="allowedPage(-1) && setPage(page-1)" class="btn"><svg class="icon gray" viewBox="0 0 32 32" style="fill:currentcolor"><path d="M20 1 L24 5 L14 16 L24 27 L20 31 L6 16 z"></path></svg></a>
-			</li>
+			<a href="javascript:void(0);" @click="allowedPage(-1) && setPage(page-1)" class="VuePagination__pagination-item VuePagination__pagination-item-prev-page btn border-right" v-bind:class="allowedPage(-1)?'':'disabled'"><svg class="icon gray" viewBox="0 0 32 32" style="fill:currentcolor"><path d="M20 1 L24 5 L14 16 L24 27 L20 31 L6 16 z"></path></svg></a>
 		</span>
 		<span class="right">
-			<li class="VuePagination__pagination-item VuePagination__pagination-item-next-page border-right" v-bind:class="allowedPage(1)?'':'disabled'">
-				<a href="javascript:void(0);" @click="allowedPage(1) && setPage(page+1)" class="btn"><svg class="icon gray" viewBox="0 0 32 32" style="fill:currentcolor"><path d="M12 1 L26 16 L12 31 L8 27 L18 16 L8 5 z"></path></svg></a>
-			</li>
+			<a href="javascript:void(0);" @click="allowedPage(1) && setPage(page+1)" class="VuePagination__pagination-item VuePagination__pagination-item-next-page btn border-right" v-bind:class="allowedPage(1)?'':'disabled'"><svg class="icon gray" viewBox="0 0 32 32" style="fill:currentcolor"><path d="M12 1 L26 16 L12 31 L8 27 L18 16 L8 5 z"></path></svg></a>
 		</span>
 		<div class="overflow-hidden sm-show">
 			<a class="VuePagination__pagination-item left btn border-right" v-for="page in pages" v-if="paginationStart + (page-1) <= totalPages" v-bind:class="isActive(paginationStart + $index - 1)?'bg-gray':''" href="javascript:void(0);" @click="setPage(paginationStart + $index)">{{paginationStart + $index}}</a>
